@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BurkinaChat</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --md-sys-color-primary: #D0BCFF;
+            --md-sys-color-on-primary: #381E72;
+            --md-sys-color-secondary: #CCC2DC;
+            --md-sys-color-surface: #1C1B1F;
+            --md-sys-color-on-surface: #E6E1E5;
+            --md-sys-color-surface-variant: #49454F;
+            --md-sys-color-outline: #938F99;
+        }
+
+        body {
+            background-color: #000000;
+            color: var(--md-sys-color-on-surface);
+            font-family: 'Google Sans', 'Roboto', sans-serif;
+            overflow-x: hidden;
+            margin: 0;
+        }
+
+        .pixel-bg {
+            background: radial-gradient(circle at 50% -20%, #381E72 0%, #1C1B1F 50%, #000000 100%);
+            min-height: 100vh;
+        }
+
+        .m3-card {
+            background: rgba(28, 27, 31, 0.6);
+            border: 1px solid rgba(147, 143, 153, 0.1);
+            border-radius: 32px;
+            backdrop-filter: blur(12px);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .m3-card:hover {
+            background: rgba(28, 27, 31, 0.9);
+            transform: translateY(-4px);
+            border-color: rgba(208, 188, 255, 0.3);
+        }
+
+        .glow-text {
+            text-shadow: 0 0 20px rgba(208, 188, 255, 0.3);
+        }
+
+        .nav-link {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            border-radius: 16px;
+        }
+
+        .nav-link:hover {
+            background: rgba(208, 188, 255, 0.1);
+            color: var(--md-sys-color-primary);
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-fade-in {
+            animation: fadeInUp 0.8s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+        }
+
+        .m3-button {
+            position: relative;
+            overflow: hidden;
+            background: var(--md-sys-color-primary);
+            color: var(--md-sys-color-on-primary);
+            padding: 16px 32px;
+            border-radius: 24px;
+            font-weight: 500;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .m3-button:hover {
+            transform: scale(1.02);
+            box-shadow: 0 4px 12px rgba(208, 188, 255, 0.4);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="pixel-bg flex flex-col items-center px-4">
+        
+        <!-- Navigation -->
+        <nav class="fixed top-6 w-full max-w-2xl px-6 py-3 m3-card flex justify-between items-center z-50 mx-4">
+            <div class="text-xl font-bold flex items-center gap-2">
+                <div class="w-8 h-8 rounded-full bg-[#D0BCFF] flex items-center justify-center">
+                    <span class="text-[#381E72] text-xs font-bold">B</span>
+                </div>
+                <span>BurkinaChat</span>
+            </div>
+            <div class="hidden md:flex gap-6 text-sm">
+                <a href="#" class="nav-link px-4 py-2">О нас</a>
+                <a href="#" class="nav-link px-4 py-2">Функции</a>
+                <a href="#" class="nav-link px-4 py-2">Сообщество</a>
+            </div>
+        </nav>
+
+        <!-- Hero Section -->
+        <main class="text-center mt-64 animate-fade-in">
+            <h1 class="text-6xl md:text-8xl font-bold mb-6 glow-text tracking-tight">
+                burkinachat
+            </h1>
+            <p class="text-gray-400 text-lg md:text-xl max-w-xl mx-auto mb-10 leading-relaxed">
+                Новое поколение общения в стиле Material You. Плавность, безопасность и эстетика в каждом сообщении.
+            </p>
+
+            <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                <button class="m3-button text-lg">
+                    Попробовать
+                </button>
+                <button class="px-8 py-4 rounded-[24px] border border-[#938F99] hover:bg-white/5 transition-all text-sm font-medium">
+                    Узнать больше
+                </button>
+            </div>
+        </main>
+
+        <!-- Features Grid (Simplified) -->
+        <section class="mt-24 w-full max-w-4xl grid grid-cols-1 md:grid-cols-3 gap-4 mb-20">
+            <div class="m3-card p-6 animate-fade-in flex flex-col items-center text-center" style="animation-delay: 0.2s">
+                <div class="w-10 h-10 bg-[#49454F] rounded-xl mb-4 flex items-center justify-center">
+                    <svg class="w-5 h-5 text-[#D0BCFF]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg>
+                </div>
+                <h3 class="text-lg font-medium">Приватность</h3>
+            </div>
+
+            <div class="m3-card p-6 animate-fade-in flex flex-col items-center text-center" style="animation-delay: 0.4s">
+                <div class="w-10 h-10 bg-[#49454F] rounded-xl mb-4 flex items-center justify-center">
+                    <svg class="w-5 h-5 text-[#D0BCFF]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                </div>
+                <h3 class="text-lg font-medium">Скорость</h3>
+            </div>
+
+            <div class="m3-card p-6 animate-fade-in flex flex-col items-center text-center" style="animation-delay: 0.6s">
+                <div class="w-10 h-10 bg-[#49454F] rounded-xl mb-4 flex items-center justify-center">
+                    <svg class="w-5 h-5 text-[#D0BCFF]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"></path></svg>
+                </div>
+                <h3 class="text-lg font-medium">Кастомизация</h3>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="w-full py-10 border-t border-white/5 text-center text-gray-600 text-xs">
+            <p>© 2024 BurkinaChat. Материал 3 & Дизайн Pixel.</p>
+        </footer>
+    </div>
+
+</body>
+</html>
